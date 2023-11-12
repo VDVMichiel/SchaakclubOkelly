@@ -37,7 +37,7 @@ const Oorsprong = ({
         {description}
       </p>
       <AnchorLink
-        className="text-sm font-bold text-white underline hover:text-secondary-500"
+        className="text-sm font-bold text-white-underline hover:text-secondary-500"
         onClick={() => setSelectedPage(SelectedPage.OverOns)}
         href={`#${SelectedPage.OverOns}`}
       >

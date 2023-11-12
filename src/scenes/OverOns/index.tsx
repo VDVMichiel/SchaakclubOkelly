@@ -50,8 +50,8 @@ type Props = {
 
 const OverOns = ({ setSelectedPage }: Props) => {
   return (
-    <section id="overons" className="h-auto min-h-screen  bg-primary-500 py-20">
-      <div className="mx-auto w-5/6">
+    <section id="overons" className="min-h-screen  bg-primary-500 py-20">
+      <div className="h-auto  bg-primary-500 mx-auto w-5/6">
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.OverOns)}
         >
