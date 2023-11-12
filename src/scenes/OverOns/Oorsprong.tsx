@@ -3,7 +3,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 
 const childVariant = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0.8, scale: 0.9 },
   visible: { opacity: 1, scale: 1 },
 };
 
@@ -37,7 +37,7 @@ const Oorsprong = ({
         {description}
       </p>
       <AnchorLink
-        className="text-sm font-bold text-white-underline hover:text-secondary-500"
+        className="text-sm font-bold text-white underline hover:text-secondary-500"
         onClick={() => setSelectedPage(SelectedPage.OverOns)}
         href={`#${SelectedPage.OverOns}`}
       >
