@@ -50,8 +50,8 @@ type Props = {
 
 const OverOns = ({ setSelectedPage }: Props) => {
   return (
-    <section id="overons" className="min-h-full bg-primary-500 py-20">
-      <div className="mx-auto  w-5/6">
+    <section id="overons" className="h-auto min-h-screen  bg-primary-500 py-20">
+      <div className="mx-auto w-5/6">
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.OverOns)}
         >
@@ -74,22 +74,22 @@ const OverOns = ({ setSelectedPage }: Props) => {
           </motion.div>
           {/* OVER ONS */}
           <motion.div
-  className="mt-10 grid grid-cols-1 gap-8 place-items-center md:grid-cols-3 md:justify-evenly h-40"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.5 }}
-  variants={container}
->
-  {oorsprongen.map((oorsprong: oorsprongType) => (
-    <Oorsprong
-      key={oorsprong.id}
-      icon={oorsprong.icon}
-      title={oorsprong.title}
-      description={oorsprong.description}
-      setSelectedPage={setSelectedPage}
-      id={""}
-    />
-  ))}
+              className="mt-10 grid grid-cols-1 gap-8 place-items-center md:grid-cols-3 md:justify-evenly"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={container}
+            >
+              {oorsprongen.map((oorsprong: oorsprongType) => (
+                <Oorsprong
+                  key={oorsprong.id}
+                  icon={oorsprong.icon}
+                  title={oorsprong.title}
+                  description={oorsprong.description}
+                  setSelectedPage={setSelectedPage}
+                  id={""}
+                />
+              ))}
 
           </motion.div>
         </motion.div>
