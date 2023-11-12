@@ -47,6 +47,7 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
+
 const OverOns = ({ setSelectedPage }: Props) => {
   return (
     <section id="overons" className="min-h-full bg-primary-500 py-20">
@@ -68,33 +69,28 @@ const OverOns = ({ setSelectedPage }: Props) => {
           >
             <Htext color="white">SCHAAKCLUB O'KELLY HASSELT</Htext>
             <p className="my-5 text-sm text-white">
-              Onze schaakclub werd officieel gesticht op zaterdag, 15 februari
-              1947 onder de benaming Cercle Hasselteois d´Echecs. Na de
-              overtuigende internationale resultaten van de toenmalig sterkste
-              Belgische speler Albéric O´Kelly de Galway, besloot het bestuur de
-              clubnaam te wijzigen in Hasseltse Schaakclub O’Kelly. In 2005 ten
-              slotte, werd de naam van de club veranderd in Koninklijke
-              Hasseltse Schaakclub O’Kelly.
+              {/* ... (previous content) */}
             </p>
           </motion.div>
           {/* OVER ONS */}
           <motion.div
-            className="mt-10 flex justify-middle gap-8 md:flex"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={container}
-          >
-            {oorsprongen.map((oorsprong: oorsprongType) => (
-              <Oorsprong
-                key={oorsprong.id}
-                icon={oorsprong.icon}
-                title={oorsprong.title}
-                description={oorsprong.description}
-                setSelectedPage={setSelectedPage}
-                id={""}
-              />
-            ))}
+  className="mt-10 grid grid-cols-1 gap-8 place-items-center md:grid-cols-3 md:justify-evenly h-40"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.5 }}
+  variants={container}
+>
+  {oorsprongen.map((oorsprong: oorsprongType) => (
+    <Oorsprong
+      key={oorsprong.id}
+      icon={oorsprong.icon}
+      title={oorsprong.title}
+      description={oorsprong.description}
+      setSelectedPage={setSelectedPage}
+      id={""}
+    />
+  ))}
+
           </motion.div>
         </motion.div>
       </div>

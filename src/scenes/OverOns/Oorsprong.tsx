@@ -25,7 +25,7 @@ const Oorsprong = ({
   return (
     <motion.div
       variants={childVariant}
-      className=" mt-5 w-1/3 flex-shrink-0 rounded-md border-2 border-gray-100 px-5 py-16 text-center"
+      className="h-full mt-5 w-full rounded-md border-2 border-gray-100 px-5 py-16 text-center"
     >
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border-2 border-black bg-primary-100 p-4 text-black">
