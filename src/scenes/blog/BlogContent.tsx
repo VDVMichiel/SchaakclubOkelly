@@ -1,16 +1,14 @@
-import React from "react";
 import { useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const BlogContent = ({ blogs }) => {
-  console.log("Blog Object");
-  console.log(blogs);
 
   const { id } = useParams();
-
   const blog = blogs.data.find((blog) => blog.id == id) || {};
 
-  console.log(blog)
+  console.log(blog.attributes.blogContent)
 
   return (
     <div className="w-full bg-[#f9f9f9] pb-10">
@@ -28,9 +26,7 @@ const BlogContent = ({ blogs }) => {
               {blog.attributes.blogTitle}
             </h1>
             <div className="pt-5">
-            {blog.attributes.blogContent.map((paragraph, index) => (
-  <p key={index}>{paragraph.children[0]?.text || <br />}</p>
-))}
+            <ReactMarkdown  className="line-break whitespace-pre-wrap" >{blog.attributes.blogContent}</ReactMarkdown  >
             </div>
           </div>
 

@@ -21,7 +21,7 @@ const Blogs = ({ blogs, setSelectedPage }: Props) => {
     <div className="w-full bg-gray-20 py-[50px]">
       <div className="mx-auto max-w-[1240px]">
         <motion.div 
-              className="grid-cols-1 grid gap-8 px-4 text-black md:grid-cols-2"
+              className="grid-cols-1 grid gap-8 px-4 text-black md:grid-cols-3"
                 viewport={{ once: true}}
                 initial="hidden"
                 whileInView="visible"
