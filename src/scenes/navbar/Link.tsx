@@ -26,8 +26,8 @@ const Link = ({ page, selectedPage, setSelectedPage}: Props) => {
       {window.location.pathname === '/' ? (
         <AnchorLink
           className={`text-sm font-bold ${
-            selectedPage === lowerCasePage ? "text-white" : "text-black"
-          } transition duration-400 hover:text-secondary-500`}
+            selectedPage === lowerCasePage ? "text-primary-100" : "text-black"
+          } transition duration-400 hover:text-primary-500`}
           href={`#${lowerCasePage}`}
         >
           {page}

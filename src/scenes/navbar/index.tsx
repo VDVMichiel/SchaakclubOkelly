@@ -16,8 +16,10 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const flexBetween = "flex items-center justify-between";
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px");
-  const navbarBackground = isTopOfPage ? "" : "bg-secondary-500 drop-shadow";
-
+  const navbarStyle = {
+    backgroundColor: isTopOfPage ? 'transparent' : 'rgba(248,244, 235, 1)',
+    transition: 'background-color 0.3s ease',
+  };
   const handleLinkClick = () => {
     // Close the menu by setting isMenuToggled to false
     setIsMenuToggled(false);
@@ -26,7 +28,8 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   return (
     <nav>
       <div
-        className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
+      style ={navbarStyle}
+        className={` ${flexBetween} fixed top-0 z-30 w-full py-6`}
       >
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>

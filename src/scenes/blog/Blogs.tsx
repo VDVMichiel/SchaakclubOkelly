@@ -44,7 +44,7 @@ const Blogs = ({ blogs, setSelectedPage }: Props) => {
                   </Link>
                 ))
               ) : (
-                <p>No blogs available</p>
+                <p>25/02/24 Fallback blog server to be coded </p>
               )}
             </motion.div>
           </div>
