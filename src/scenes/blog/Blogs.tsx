@@ -43,6 +43,8 @@ const Blogs = ({ blogs, setSelectedPage }: Props) => {
                     </div>
                   </Link>
                 ))
+              ) : blogs && blogs.loading ? (
+                <p>Loading...</p>
               ) : (
                 <p>25/02/24 Fallback blog server to be coded </p>
               )}
