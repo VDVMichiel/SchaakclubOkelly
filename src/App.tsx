@@ -35,7 +35,7 @@ function useFetch(url, timeout = 5000) {
 
 export default function App() {
   let { loading, data, error } = useFetch(
-    'https://schaakclubokellydb.onrender.com/api/blogs?populate=*',
+    'https://strapi-okellyv2.onrender.com/api/blogs?populate=*',
     5000 // 5000 milliseconds (5 seconds)
   );
 
