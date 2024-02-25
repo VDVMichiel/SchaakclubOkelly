@@ -38,7 +38,7 @@ const Contact = ({ setSelectedPage }: Props) => {
   };
 
   return (
-    <section id="contact" className="mx-auto w-5/6 pb-32 pt-24">
+    <section id="contact" className="bg-gray-20 w-full  pb-32 pt-24 ">
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Contact)}>
         {/* HEADER */}
         <motion.div
@@ -53,15 +53,15 @@ const Contact = ({ setSelectedPage }: Props) => {
           }}
         >
           <Htext>
-            <span className="text-primary-500">Word lid</span>
+            <span className="text-primary-500 mx-32">Word lid</span>
           </Htext>
-          <p className="my-5">
+          <p className="my-5 mx-32">
             Indien je vragen hebt of lid wilt worden, kan je ons contacteren via
             onderstaand formulier.
           </p>
         </motion.div>
         {/* FORM */}
-        <div className="mt-10 flex flex-col md:flex-row">
+        <div className="mt-10 flex flex-col mx-32 md:flex-row">
           {/* Form Section */}
           <motion.div
             className="md:w-2/3 pr-8"

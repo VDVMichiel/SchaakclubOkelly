@@ -9,7 +9,7 @@ type Props = {
 
 const Agenda = ({ setSelectedPage }: Props) => {
   return (
-    <section id="agenda" className="w-full bg-primary-100 py-20 text-white">
+    <section id="agenda" className="w-full h-full bg-primary-100 py-20 text-white">
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Agenda)}>
         <motion.div
           className="mx-auto w-5/6"

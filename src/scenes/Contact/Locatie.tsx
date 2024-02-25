@@ -25,10 +25,10 @@ const Locatie = ({
   return (
     <motion.div
       variants={childVariant}
-      className=" mt-5 3 flex-shrink-0 rounded-md border-2 border-black px-5 py-16 text-center"
+      className=" mt-0  flex-shrink-0 rounded-md border-2 border-black px-5 py-16 text-center"
     >
       <div className="mb-4 flex justify-center">
-        <div className="rounded-full border-2 border-black bg-white p-4 text-black">
+        <div className="rounded-full border-2 border-black bg-grey-200 p-4 text-primary">
           {icon}
         </div>
       </div>
