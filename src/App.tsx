@@ -8,7 +8,7 @@ import useFetch from "./hooks/useFetch";
 export default function App() {
   let { loading, data, error } = useFetch(
     'https://strapi-okellyv2.onrender.com/api/blogs?populate=*',
-    5000 // 5000 milliseconds (5 seconds)
+    
   );
 
   if (loading) return ;
