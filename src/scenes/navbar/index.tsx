@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo from "@/assets/Logo1.png";
 import Link from "./Link";
@@ -17,6 +17,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px");
   const navbarBackground = isTopOfPage ? "" : "bg-secondary-500 drop-shadow";
+
+  const handleLinkClick = () => {
+    // Close the menu by setting isMenuToggled to false
+    setIsMenuToggled(false);
+  };
 
   return (
     <nav>
@@ -82,7 +87,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
       </div>
       {/* MOBILE MENU MODAL */}
       {!isAboveMediumScreens && isMenuToggled && (
-        <div className="tex:white fixed bottom-0 right-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
+        <div className="text-white fixed bottom-0 right-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
           {/* CLOSE ICON */}
           <div className="flex justify-end p-12">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
@@ -90,24 +95,24 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             </button>
           </div>
           {/* MENU ITEMS */}
-          <div className="gap-100 ml-[33%] flex flex-col text-2xl">
+          <div className="gap-100 ml-[33%] flex flex-col text-2xl text-white">
             <Link
               page="Home"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
-            />
+              />
             <Link
               page="Over ons"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Agenda"
+              page="Blog"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Lokaal"
+              page="Agenda"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />

@@ -9,7 +9,7 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
+const Link = ({ page, selectedPage, setSelectedPage}: Props) => {
   const lowerCasePage = page.toLowerCase().replace(/ /g, "") as SelectedPage;
 
   const handleClick = () => {
@@ -20,14 +20,14 @@ const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
       window.location.href = '/'; // Adjust the root path based on your route structure.
     }
   };
-
+  
   return (
     <React.Fragment>
       {window.location.pathname === '/' ? (
         <AnchorLink
           className={`text-sm font-bold ${
-            selectedPage === lowerCasePage ? "text-primary-500" : "text-black"
-          } transition duration-500 hover:text-primary-300`}
+            selectedPage === lowerCasePage ? "text-white" : "text-black"
+          } transition duration-400 hover:text-secondary-500`}
           href={`#${lowerCasePage}`}
         >
           {page}
@@ -48,3 +48,7 @@ const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
 };
 
 export default Link;
+function setIsMenuToggled(arg0: boolean) {
+  throw new Error('Function not implemented.');
+}
+

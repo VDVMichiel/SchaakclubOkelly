@@ -128,8 +128,8 @@ export default function Example() {
               </button>
             </div>
             <div className="mt-10 grid grid-cols-7 text-center text-s leading-6 text-white">
-              {weekdays.map((weekday) => (
-                <div key={weekday} className="py-1.5">
+              {weekdays.map((weekday,index) => (
+                <div key={`${weekday}-${index}`} className="py-1.5">
                   {weekday}
                 </div>
               ))}
@@ -137,7 +137,7 @@ export default function Example() {
             <div className="mt-2 grid grid-cols-7 text-s text-white">
               {days.map((day, dayIdx) => (
                 <div
-                  key={day.toString()}
+                  key={`${format(day, 'yyyy-MM-dd')}`}
                   className={classNames(
                     dayIdx === 0 && colStartClasses[getDay(day)],
                     "py-1.5",
@@ -195,7 +195,7 @@ export default function Example() {
             <ol className="mt-4 space-y-1 text-m leading-6 text-white">
               {selectedDayMeetings.length > 0 ? (
                 selectedDayMeetings.map((meeting) => (
-                  <Meeting meeting={meeting} key={meeting.id} />
+                  <Meeting meeting={meeting} key={meeting.name} />
                 ))
               ) : (
                 <p>Geen activiteiten vandaag.</p>
