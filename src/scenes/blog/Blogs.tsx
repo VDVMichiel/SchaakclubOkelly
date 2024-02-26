@@ -1,3 +1,4 @@
+import Htext from "@/shared/Htext";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -9,12 +10,17 @@ type Props = {
 
 const Blogs = ({ blogs, setSelectedPage }: Props) => {
   return (
-    <section id="blog" className="bg-gray-20 min-h-full py-20">
+    <section id="blog" className="bg-gray-20 min-h-fit py-10">
+      <div className="">
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Blog)}>
-        <div className="w-full bg-gray-20 py-[50px]">
-          <div className="mx-auto max-w-[1240px]">
+      <Htext>
+            <span className="text-primary-500 mx-32">Blog</span>
+      </Htext>
+        <div className="w-full bg-gray-20 py-[25px]">
+          
+          <div className="mx-32 w-fit">
             <motion.div
-              className="grid-cols-1 grid gap-8 px-4 text-black md:grid-cols-3"
+              className="grid-cols-1 grid gap-8 px-4  text-black md:grid-cols-3"
               viewport={{ once: true }}
               initial="hidden"
               whileInView="visible"
@@ -27,7 +33,7 @@ const Blogs = ({ blogs, setSelectedPage }: Props) => {
               {blogs && blogs.data && blogs.data.length > 0 ? (
                 blogs.data.map((blog) => (
                   <Link key={blog.id} to={`/blog/${blog.id}`}>
-                    <div className="overflow-hidden rounded-xl bg-gray-20 drop-shadow-md">
+                    <div className="rounded-xl bg-gray-20 drop-shadow-md">
                       <img
                         className="h-56 w-full object-cover"
                         src={`${blog.attributes.blogImg.data.attributes.url}`}
@@ -52,6 +58,7 @@ const Blogs = ({ blogs, setSelectedPage }: Props) => {
           </div>
         </div>
       </motion.div>
+      </div>
     </section>
   );
 };
