@@ -12,7 +12,7 @@ type Props = {
 const Blogs = ({ blogs, setSelectedPage }: Props) => {
   const { t } = useTranslation();
   return (
-    <section id="blog" className="bg-gray-20 w-full min-h-fit py-20">
+    <section id="blog" className="bg-gray-20 w-full h-full py-20">
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Blog)}>
         <motion.div
           className="mx-auto w-5/6"
