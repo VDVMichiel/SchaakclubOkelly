@@ -4,7 +4,7 @@ import { useFetchWithRetry } from "./hooks/useFetchWithRetry";
 
 export default function App() {
   const { loading, data, error } = useFetchWithRetry(
-    'https://strapi-okellyv2.onrender.com/api/blogs?populate=*',
+    'https://strapi-okelly2024.onrender.com/api/Blogs?populate=*',
     {},
     3, // Max attempts
     5000 // Timeout in milliseconds
