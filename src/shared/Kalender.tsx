@@ -23,41 +23,33 @@ const weekdays = ["M", "D", "W", "D", "V", "Z", "Z"];
 const meetings = [
   {
     id: 1,
-    name: "LIK ronde 3 + clubavond",
+    name: "16e Memorial Jef Coolen",
     imageUrl:
       "https://svgur.com/i/zar.svg",
-    startDatetime: "2023-11-17T19:00",
-    endDatetime: "2023-11-17T24:00",
+    startDatetime: "2024-07-05T19:00",
+    endDatetime: "2024-07-05T24:00",
   },
   {
     id: 2,
-    name: "NIC ronde 4",
+    name: "Club dicht!",
     imageUrl:
-      "https://svgur.com/i/zb0.svg",
-    startDatetime: "2023-11-19T14:00",
-    endDatetime: "2023-11-19T18:30",
+      "https://svgshare.com/i/18bu.svg",
+      startDatetime: "2024-07-12T19:00",
+      endDatetime: "2024-07-12T24:00",
   },
   {
     id: 3,
-    name: "LIC ronde 4",
-    imageUrl: "https://svgur.com/i/zar.svg",
-    startDatetime: "2023-11-24T19:00",
-    endDatetime: "2023-11-24T24:00",
+    name: "Clubavond - Lokaal 9",
+    imageUrl: "https://svgur.com/i/zb0.svg",
+    startDatetime: "2024-07-19T19:00",
+      endDatetime: "2024-07-19T24:00",
   },
   {
     id: 4,
-    name: "LIC ronde 4",
-    imageUrl: "https://svgur.com/i/zar.svg",
-    startDatetime: "2023-11-25T14:00",
-    endDatetime: "2023-11-25T18:00",
-  },
-  {
-    id: 5,
-    name: "Michael Foster",
-    imageUrl:
-      "https://svgur.com/i/zar.svg",
-    startDatetime: "2024-02-25T14:00",
-    endDatetime: "2022-05-13T14:30",
+    name: "Algemene Vergadering + Clubavond - Lokaal 9",
+    imageUrl: "https://svgur.com/i/zb0.svg",
+    startDatetime: "2024-07-26T19:00",
+      endDatetime: "2024-07-26T24:00",
   },
 ];
 

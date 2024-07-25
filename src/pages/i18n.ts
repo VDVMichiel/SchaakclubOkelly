@@ -28,6 +28,7 @@ const resources = {
       "Submit":"Submit",
       "AgendaFor": "Agenda for",
       "ActivitiesToday": "No activities today.",
+      "BlogIntro": "Below you can consult the blog posts."
     }
   },
   fr: {
@@ -54,6 +55,7 @@ const resources = {
       "Submit": "Soumettre",
       "AgendaFor": "Ordre du jour",
       "ActivitiesToday" : "Pas d'activités aujourd'hui",
+      "BlogIntro": "Ci-dessous, vous pouvez consulter les articles de blog."
     }
   },
   nl: {
@@ -80,6 +82,7 @@ const resources = {
       "Submit":"Versturen",
       "AgendaFor": "Agenda voor",
       "ActivitiesToday": "Geen activiteiten vandaag.",
+      "BlogIntro": "Hieronder kan je de blogposten raadplegen."
     }
   },
 }

@@ -2,6 +2,7 @@ import Htext from "@/shared/Htext";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -9,6 +10,7 @@ type Props = {
 };
 
 const Blogs = ({ blogs, setSelectedPage }: Props) => {
+  const { t } = useTranslation();
   return (
     <section id="blog" className="bg-gray-20 w-full min-h-fit py-20">
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Blog)}>
@@ -25,7 +27,7 @@ const Blogs = ({ blogs, setSelectedPage }: Props) => {
         >
           <div className="text-primary-500 md:w-3/5">
             <Htext color="red">Blog</Htext>
-            <p className="py-2">Hieronder kan je de blogposten raadplegen</p>
+            <p className="py-2">{t("BlogIntro")}</p>
           </div>
           <div className="w-full py-[25px]">
             <div className="mx-32 w-fit">
@@ -46,7 +48,7 @@ const Blogs = ({ blogs, setSelectedPage }: Props) => {
                       <div className="rounded-xl bg-gray-20 drop-shadow-md">
                         <img
                           className="h-56 w-full object-cover"
-                          src={`${blog.attributes.blogImg.data.attributes.url}`}
+                          src={`https://strapi-okelly2024.onrender.com${blog.attributes.blogImg.data.attributes.url}`}
                         />
                         <div className="p-8">
                           <h3 className="my-1 text-2xl font-bold">
