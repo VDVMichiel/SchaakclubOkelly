@@ -8,6 +8,7 @@ import KBS from "@/assets/KBS.svg";
 import HasseltLogo from "@/assets/Hasselt.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -15,6 +16,8 @@ type Props = {
 
 const Home = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+  const { t } = useTranslation();
+
   return (
     <section
       id="home"
@@ -44,7 +47,7 @@ const Home = ({ setSelectedPage }: Props) => {
                 <img alt="home-page-text" src={HomePageText} />
               </div>
             </div>
-            <p className="mt-8 text-sm">Schaken in Hasselt sinds 1947!</p>
+            <p className="mt-8 text-sm">{t("IntroText")}</p>
           </motion.div>
           {/* ACTIONS */}
           <motion.div
@@ -59,14 +62,14 @@ const Home = ({ setSelectedPage }: Props) => {
             }}
           >
             <ActionButton setSelectedPage={setSelectedPage}>
-              Word lid
+              {t("Word lid")}
             </ActionButton>
             <AnchorLink
               className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
               onClick={() => setSelectedPage(SelectedPage.Contact)}
               href={`#${SelectedPage.Contact}`}
             >
-              <p>Meer informatie</p>
+              <p>{t("Meer informatie")}</p>
             </AnchorLink>
           </motion.div>
         </div>

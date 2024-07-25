@@ -1,5 +1,4 @@
 import { SelectedPage } from "@/shared/types";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 
 const childVariant = {
@@ -28,7 +27,7 @@ const Locatie = ({
       className=" mt-0  flex-shrink-0 rounded-md border-2 border-black px-5 py-16 text-center"
     >
       <div className="mb-4 flex justify-center">
-        <div className="rounded-full border-2 border-black bg-grey-200 p-4 text-primary">
+        <div className="rounded-full border-2 border-black bg-grey-200 p-4 text-p">
           {icon}
         </div>
       </div>

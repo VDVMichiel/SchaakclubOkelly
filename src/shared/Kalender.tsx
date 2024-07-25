@@ -16,6 +16,7 @@ import {
   startOfToday,
 } from "date-fns";
 import { Fragment, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const weekdays = ["M", "D", "W", "D", "V", "Z", "Z"];
 
@@ -93,7 +94,7 @@ export default function Example() {
   let selectedDayMeetings = meetings.filter((meeting) =>
     isSameDay(parseISO(meeting.startDatetime), selectedDay),
   );
-
+  const { t } = useTranslation();
   return (
     <div className="pt-16 py-0">
       <div className="mx-auto max-w-md px-4 sm:px-7 md:max-w-4xl md:px-6">
@@ -187,7 +188,7 @@ export default function Example() {
           </div>
           <section className="mt-12 md:mt-0 md:pl-14">
             <h2 className="font-semibold text-white">
-              Agenda voor {" "}
+              {t("AgendaFor")} {" "}
               <time dateTime={format(selectedDay, "yyyy-MM-dd")}>
                 {format(selectedDay, "dd MMMM, yyy")}
               </time>
@@ -198,7 +199,7 @@ export default function Example() {
                   <Meeting meeting={meeting} key={meeting.name} />
                 ))
               ) : (
-                <p>Geen activiteiten vandaag.</p>
+                <p>{t("ActivitiesToday")}</p>
               )}
             </ol>
           </section>

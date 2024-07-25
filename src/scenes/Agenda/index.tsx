@@ -2,12 +2,14 @@ import { SelectedPage } from "@/shared/types";
 import Kalender from "@/shared/Kalender";
 import { motion } from "framer-motion";
 import Htext from "@/shared/Htext";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
 const Agenda = ({ setSelectedPage }: Props) => {
+  const { t } = useTranslation();
   return (
     <section id="agenda" className="w-full h-full bg-primary-100 py-20 text-white">
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Agenda)}>
@@ -23,8 +25,8 @@ const Agenda = ({ setSelectedPage }: Props) => {
           }}
         >
           <div className="md:w-3/5">
-            <Htext>AGENDA</Htext>
-            <p className="py-2">Hieronder kan je de clubagenda raadplegen</p>
+            <Htext>{t("Agenda")}</Htext>
+            <p className="py-2">{t("AgendaText")}</p>
           </div>
           <div className="justify-center">
             <Kalender />

@@ -5,42 +5,42 @@ import { SelectedPage } from "@/shared/types";
 
 type Props = {
   page: string;
+  label: string; // New prop for the displayed label
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
+  isMobileMenu?: boolean; // New prop to indicate mobile menu view
 };
 
-const Link = ({ page, selectedPage, setSelectedPage}: Props) => {
+const Link = ({ page, label, selectedPage, setSelectedPage, isMobileMenu }: Props) => {
   const lowerCasePage = page.toLowerCase().replace(/ /g, "") as SelectedPage;
 
   const handleClick = () => {
     setSelectedPage(lowerCasePage);
-
-    // If on a different page (not the root page), navigate to the root page first.
-    if (window.location.pathname !== '/') {
-      window.location.href = '/'; // Adjust the root path based on your route structure.
+    if (!isMobileMenu && window.location.pathname !== '/') {
+      window.location.href = '/'; // Always navigate to the root path in desktop view
     }
   };
-  
+
   return (
     <React.Fragment>
       {window.location.pathname === '/' ? (
         <AnchorLink
           className={`text-sm font-bold ${
-            selectedPage === lowerCasePage ? "text-primary-100" : "text-black"
+            selectedPage === lowerCasePage && isMobileMenu ? "text-white" : "text-black"
           } transition duration-400 hover:text-primary-500`}
           href={`#${lowerCasePage}`}
         >
-          {page}
+          {label}
         </AnchorLink>
       ) : (
         <RouterLink
           className={`text-sm font-bold ${
-            selectedPage === lowerCasePage ? "text-primary-500" : "text-black"
+            selectedPage === lowerCasePage && isMobileMenu ? "text-white" : "text-black"
           } transition duration-500 hover:text-primary-300`}
-          to={`/${lowerCasePage}`}  // Adjust the "to" prop based on your route structure.
+          to={`/${lowerCasePage}`} // Always use the page for navigation
           onClick={handleClick}
         >
-          {page}
+          {label}
         </RouterLink>
       )}
     </React.Fragment>
@@ -48,7 +48,3 @@ const Link = ({ page, selectedPage, setSelectedPage}: Props) => {
 };
 
 export default Link;
-function setIsMenuToggled(arg0: boolean) {
-  throw new Error('Function not implemented.');
-}
-

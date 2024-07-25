@@ -1,6 +1,7 @@
 import { SelectedPage } from "@/shared/types";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const childVariant = {
   hidden: { opacity: 0.8, scale: 0.9 },
@@ -22,6 +23,7 @@ const Oorsprong = ({
   description,
   setSelectedPage,
 }: Props) => {
+  const { t } = useTranslation();
   return (
     <motion.div
       variants={childVariant}
@@ -38,10 +40,10 @@ const Oorsprong = ({
       </p>
       <AnchorLink
         className="text-sm font-bold text-white underline hover:text-secondary-500"
-        onClick={() => setSelectedPage(SelectedPage.OverOns)}
-        href={`#${SelectedPage.OverOns}`}
+        onClick={() => setSelectedPage(SelectedPage.Contact)}
+        href={`#${SelectedPage.Contact}`}
       >
-        <p>Meer informatie</p>
+        <p>{t("Meer informatie")}</p>
       </AnchorLink>
     </motion.div>
   );

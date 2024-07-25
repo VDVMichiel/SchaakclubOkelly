@@ -1,14 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import Typography from 'typography';
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
-import Htext from "@/shared/Htext";
 
 const BlogContent = ({ blogs }) => {
   const { id } = useParams();
   const blog = blogs.data.find((blog) => blog.id == id) || {};
-  <Htext>
-  <span className="text-primary-500 mx-32">Word lid</span>
-</Htext>
+
   
   return (
     

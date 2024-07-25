@@ -1,18 +1,15 @@
 import { Homepage, BlogContentPage } from "./pages";
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from 'react';
-import useFetch from "./hooks/useFetch";
-
-
+import { useFetchWithRetry } from "./hooks/useFetchWithRetry";
 
 export default function App() {
-  let { loading, data, error } = useFetch(
+  const { loading, data, error } = useFetchWithRetry(
     'https://strapi-okellyv2.onrender.com/api/blogs?populate=*',
-    
+    {},
+    3, // Max attempts
+    5000 // Timeout in milliseconds
   );
 
-  if (loading) return ;
-  if (error) return ;
   return (
     <div className="app">
       <Routes>

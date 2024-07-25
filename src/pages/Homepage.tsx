@@ -8,22 +8,36 @@ import Blogs from "@/scenes/blog/Blogs";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
 
-const Homepage = ({ blogs }) => {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Home,
-  );
-  const [isTopOfPage, SetIsTopOfPage] = useState<boolean>(true);
+interface HomepageProps {
+  blogs: any; // Replace 'any' with the appropriate type for blogs
+}
+
+const Homepage: React.FC<HomepageProps> = ({ blogs }) => {
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
+  const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
-        SetIsTopOfPage(true);
+        setIsTopOfPage(true);
         setSelectedPage(SelectedPage.Home);
+      } else {
+        setIsTopOfPage(false);
       }
-      if (window.scrollY !== 0) SetIsTopOfPage(false);
     };
+
+    // Attach scroll event listener
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Cleanup function to remove scroll event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array ensures this effect runs only once after initial render
+
+  useEffect(() => {
+    // Scroll to the top of the page after initial render
+    window.scrollTo(0, 0);
   }, []);
 
   return (

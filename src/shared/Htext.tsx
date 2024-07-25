@@ -6,7 +6,7 @@ type Props = {
 };
 
 function Htext({ children, color = "white" }: Props) {
-  const textColorClass = color === "white" ? "text-white" : "text-red-500";
+  const textColorClass = color === "white" ? "text-white" : "text-primary-500";
 
   return (
     <h1
