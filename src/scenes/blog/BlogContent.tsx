@@ -17,7 +17,7 @@ const BlogContent = ({ blogs }) => {
           <div className="col-span-2 ">
             <img
               className="h-56 w-full object-cover"
-              src={`https://strapi-okelly2024.onrender.com${blog.attributes.blogImg.data.attributes.url}`}
+              src={`${blog.attributes.blogImg.data.attributes.url}`}
             />
             <h1 className="my-1 pt-5 text-2xl font-bold">
               {blog.attributes.blogTitle}
@@ -50,7 +50,7 @@ const BlogContent = ({ blogs }) => {
             <div>
               <img
                 className="mx-auto h-32 w-32 rounded-full object-cover p-2"
-                src={`https://strapi-okelly2024.onrender.com${blog.attributes.authorImg.data.attributes.url}`}
+                src={`${blog.attributes.authorImg.data.attributes.url}`}
               />
               <h1 className="pt-3 text-center text-2xl font-bold text-gray-900">
                 {blog.attributes.authorName}
