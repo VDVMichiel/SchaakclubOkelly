@@ -103,7 +103,7 @@ const Blogs = ({ blogs, setSelectedPage }: Props) => {
                     <div className="rounded-xl h-80 bg-gray-20 drop-shadow-md flex flex-col">
                       <img
                         className="rounded-t-xl h-56 w-full object-cover"
-                        src={`https://strapi-okelly2024.onrender.com${blog.attributes.blogImg.data.attributes.url}`}
+                        src={`${blog.attributes.blogImg.data.attributes.url}`}
                         alt={blog.attributes.blogTitle}
                       />
                       <div className="h-24 items-center justify-left p-8">
