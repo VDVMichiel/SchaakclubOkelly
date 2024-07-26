@@ -35,10 +35,8 @@ const OverOns = ({ setSelectedPage }: Props) => {
     {
       id: "3",
       icon: <AcademicCapIcon className="h-6 w-6" />,
-      title: "Oorsprong2",
-      description: `Officieel gesticht op zaterdag 15 februari 1947 onder de benaming Cercle Hasselteois d'Echecs. 
-          Na sterke internationale resultaten van de Belgische speler Albéric O´Kelly de Galway, werd de clubnaam gewijzigd naar Hasseltste Schaakclub O'Kelly.
-          In 2005 werd de naam van de club veranderd in Koninklijke Hasseltse Schaakclub O'Kelly.`,
+      title: t("Oorsprong"),
+      description: t("OorsprongText"),
     },
   ];
 
