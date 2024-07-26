@@ -10,13 +10,13 @@ export default function App() {
     5000 // Timeout in milliseconds
   );
 
+  if (error) return <div>Error: {error.message}</div>;
+
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<Homepage blogs={data ? data : ""} />}></Route>
-        <Route
-          path="/blog/:id"
-          element={<BlogContentPage blogs={data ? data : ""} />}></Route>
+        <Route path="/" element={<Homepage blogs={data ? data : ""} />} />
+        <Route path="/blog/:id" element={<BlogContentPage blogs={data ? data : ""} />} />
       </Routes>
     </div>
   );

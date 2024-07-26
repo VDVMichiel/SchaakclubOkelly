@@ -1,48 +1,45 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-const useFetchWithRetry = (url: string, options: RequestInit = {}, maxAttempts = 3, timeout = 5000) => {
+export function useFetchWithRetry(url, options = {}, maxAttempts = 3, timeout = 5000) {
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<any>(null);
-  const [error, setError] = useState<any>(null);
+  const [error, setError] = useState(null);
+  const fetchedOnceRef = useRef(false);
 
   useEffect(() => {
+    if (fetchedOnceRef.current) return;
+
     let attempts = 0;
-    let timedOut = false;
+    let didCancel = false;
 
     const fetchData = async () => {
-      while (attempts < maxAttempts && !timedOut) {
+      while (attempts < maxAttempts && !didCancel) {
         try {
-          const controller = new AbortController();
-          const id = setTimeout(() => {
-            controller.abort();
-            timedOut = true;
-          }, timeout);
-
-          const response = await fetch(url, { ...options, signal: controller.signal });
-          clearTimeout(id);
-
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-
+          const response = await fetch(url, options);
           const result = await response.json();
-          setData(result);
-          setLoading(false);
-          return;
+          if (!didCancel) {
+            setData(result);
+            setLoading(false);
+            fetchedOnceRef.current = true;
+            break;
+          }
         } catch (err) {
-          attempts += 1;
-          if (attempts >= maxAttempts || timedOut) {
+          attempts++;
+          if (attempts >= maxAttempts && !didCancel) {
             setError(err);
             setLoading(false);
           }
         }
+        await new Promise((resolve) => setTimeout(resolve, timeout));
       }
     };
 
     fetchData();
+
+    return () => {
+      didCancel = true;
+    };
   }, [url, options, maxAttempts, timeout]);
 
-  return { loading, data, error };
-};
-
-export { useFetchWithRetry };
+  return { data, loading, error };
+}
